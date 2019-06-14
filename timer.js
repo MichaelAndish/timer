@@ -8,9 +8,12 @@
     // $("#anotherID #test", "style.color", 'pink');
     // $("#anotherID .title");
 
-    $('#anotherID #testagain .hi', "style.color", "green");
+    // $('#anotherID #testAgain .hi', "style.color", "green");
 
-    console.log($('#anotherID #testagain .hi'));
+    // $('#anotherID .section .content',"style.border", "1px solid #ccc");
+
+    // console.log($('#anotherID .section .content',"style.color", "green"));
+
 
 function $(value, action=null, actionValue=null)
 {
@@ -42,6 +45,7 @@ function $(value, action=null, actionValue=null)
     return findElementVar;
 }
 
+////    SET ATTRIBUTE FOR TAGS
 function setAttr(el,actions, value)
 {
     let arrayAction = actions.split('.');
@@ -49,29 +53,7 @@ function setAttr(el,actions, value)
     return;
 }
 
-// function findElement(element)
-// {
-//     let find = null;
-
-//     switch(true)
-//     {
-//         case element.indexOf('.') != -1:
-//             find = document.querySelectorAll(element);
-//             break;
-
-//         case element.indexOf('#') != -1:
-//             find = document.querySelector(element);
-//             break;
-
-//         default:
-//             find = document.getElementsByTagName(element);
-//             break
-//     }    
-
-//     return find;
-// }
-
-
+////    FINDING TAG ELEMENT BY TAGNAME, CLASS OR ID
 function findElement(element)
 {
     let doms = element.split(" ");

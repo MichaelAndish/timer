@@ -27,7 +27,8 @@ Nested Access to element:
 ```
 $('#anotherID #testAgain .hi', "style.color", "green"); // Tags with "hi" ClassName
 
-$('#anotherID #testAgain .hi'); // output is HTMLCollection
+$('#anotherID .section .content',"style.border", "1px solid #ccc");
 
+$('#anotherID #testAgain .hi'); // output is HTMLCollection
 ```
 
