@@ -3,6 +3,15 @@ This is a timer just for fun :) and enjoying Javascript
 
 # Usage 
 
+* Add this code in script tag :)
+* Input value in simpleTimer function base this format : <b>YYY-MM-DDTHH:MM:SS</b>
+
+```
+    <script src="timer.js"></script>
+    <script>
+        simpleTimer("2019-07-14T20:12:00"); // YYY-MM-DDTHH:MM:SS
+    </script>
+```
 
 
 # About Codes :)
