@@ -1,0 +1,42 @@
+/* GENERAL STYLE */
+html, body{
+    font-family : 'Pacifico', cursive;
+    width       :  1200px;
+    margin      : 0 auto;
+}
+
+/* Simple Timer */
+#simpleTimer{
+    font-family : 'Pacifico', cursive;
+    margin      : 2em auto;
+    width       : 100%;
+
+}
+
+#simpleTimer .clock{
+    margin          : 1em auto;
+    text-align      : center;
+    letter-spacing  : 12px;
+}
+
+#simpleTimer .clock > div{
+    position    : relative;
+    text-align  : center;
+    display     : inline-block;
+    margin      : 0 2em;
+}
+
+#simpleTimer .clock > div > span{
+    display : block;
+}
+
+#simpleTimer .clock span.value{
+    font-size   : 5em;
+    text-shadow : 0 0 5px rgba(0,0,0,0.5);
+}
+
+#simpleTimer .clock span.title{
+    font-size   : 1.5em;
+    position    : absolute;
+    top         : 0;
+}
