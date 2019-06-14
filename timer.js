@@ -1,20 +1,69 @@
+////    SIMPLE TIMER
+function simpleTimer(expireDateTime)
+{
+    let days    = $("#simpleTimer_days");
+    let hours   = $("#simpleTimer_hours");
+    let minutes = $("#simpleTimer_minutes");
+    let seconds = $("#simpleTimer_seconds");
 
-    // $('span', "style.color", 'blue');
-    // $('.title', "style.color", 'pink');
-    // $('#test', "style.color", 'blue');
-    // $("#test").style.color = "green";
+    let simpleTimer = setInterval(function()
+    {
+        let data = countDownBuilder(expireDateTime); 
+        
+        if(data.status === false)
+        {
+            days.innerHTML      =   "00";
+            hours.innerHTML     =   "00";
+            minutes.innerHTML   =   "00";
+            seconds.innerHTML   =   "00";
 
-    // $("#anotherID #test").style.color = "green";
-    // $("#anotherID #test", "style.color", 'pink');
-    // $("#anotherID .title");
+            clearInterval(simpleTimer);
+            return;
+        }
+        days.innerHTML      = data.days;
+        hours.innerHTML     = data.hours;
+        minutes.innerHTML   = data.minutes;
+        seconds.innerHTML   = data.seconds;
 
-    // $('#anotherID #testAgain .hi', "style.color", "green");
+    }, 1000);
 
-    // $('#anotherID .section .content',"style.border", "1px solid #ccc");
+}
+simpleTimer("2019-06-14T20:12:00"); // YYY-MM-DDTHH:MM:SS
 
-    // console.log($('#anotherID .section .content',"style.color", "green"));
 
+////    COUNT DOWN BUILDER
+function countDownBuilder(expireTime)
+{
+    let counterObject   = {};
+    let now             = new Date().getTime() / 1000;
+    let expireTimeStamp = new Date(expireTime).getTime() / 1000;
+    let timeRemaining   = expireTimeStamp - now;
 
+    if(timeRemaining < 0)
+    {
+        counterObject.message   = "The time has expired!";
+        counterObject.status    = false;
+
+        return counterObject;
+    }
+
+    counterObject.status    = true;
+    counterObject.days      = "00";
+    counterObject.hours     = parseInt(timeRemaining / 3600);
+    counterObject.minutes   = parseInt((timeRemaining - (counterObject.hours * 3600)) / 60);
+    counterObject.seconds   = parseInt((timeRemaining - (counterObject.minutes * 60)) % 60) ;
+
+    ////    JUST ADD ZERO TO SINGLE DIGIT NUMBER
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+    counterObject.hours     = counterObject.hours   < 10  ? "0" + counterObject.hours   : counterObject.hours;
+    counterObject.minutes   = counterObject.minutes < 10  ? "0" + counterObject.minutes : counterObject.minutes;
+    counterObject.seconds   = counterObject.seconds < 10  ? "0" + counterObject.seconds : counterObject.seconds;
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+    return counterObject;
+
+}
+
+////    GET ELEMENT OR CHANGE STYLES WITH IT
 function $(value, action=null, actionValue=null)
 {
     let findElementVar = findElement(value);
