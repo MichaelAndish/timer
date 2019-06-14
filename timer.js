@@ -28,7 +28,7 @@ function simpleTimer(expireDateTime)
     }, 1000);
 
 }
-simpleTimer("2019-06-14T20:12:00"); // YYY-MM-DDTHH:MM:SS
+// simpleTimer("2019-06-14T20:12:00"); // YYY-MM-DDTHH:MM:SS
 
 
 ////    COUNT DOWN BUILDER
