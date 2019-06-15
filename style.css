@@ -1,42 +1,91 @@
-/* GENERAL STYLE */
-html, body{
-    font-family : 'Pacifico', cursive;
-    width       :  1200px;
-    margin      : 0 auto;
-}
+/*
+|--------------------------------------------------------------------------
+|  GENERAL CSS STYLES
+|--------------------------------------------------------------------------
+|
+*/        
 
-/* Simple Timer */
-#simpleTimer{
-    font-family : 'Pacifico', cursive;
-    margin      : 2em auto;
-    width       : 100%;
+    html, body{
+        font-family : 'Pacifico', cursive;
+        font-size   : 100%; 
+        width       : 1200px;
+        margin      : 0 auto;
+    }
 
-}
+    h1, h2, h3{
+        font-family: 'PT Sans', sans-serif;
+    }
 
-#simpleTimer .clock{
-    margin          : 1em auto;
-    text-align      : center;
-    letter-spacing  : 12px;
-}
+    .section{
+        padding : 0em 0 1em;
+        border-bottom : 1px solid #f5f5f5;
+    }
 
-#simpleTimer .clock > div{
-    position    : relative;
-    text-align  : center;
-    display     : inline-block;
-    margin      : 0 2em;
-}
+    .section header{
+        font-size: 2em;
+    }
 
-#simpleTimer .clock > div > span{
-    display : block;
-}
+    .section header h1{
+        display: inline-block;
+        border-bottom: 2px solid #FF5252;
+    }
 
-#simpleTimer .clock span.value{
-    font-size   : 5em;
-    text-shadow : 0 0 5px rgba(0,0,0,0.5);
-}
+    pre {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        overflow: auto;
+        overflow-y: hidden;
+        font-size: 12px;
+        line-height: 20px;
+        background: #efefef;
+        border: 1px solid #777;
+        background: url(lines.png) repeat 0 0;
+    }
 
-#simpleTimer .clock span.title{
-    font-size   : 1.5em;
-    position    : absolute;
-    top         : 0;
-}
+    pre code {
+        padding: 10px;
+        color: #333;
+    }
+
+/*
+|--------------------------------------------------------------------------
+|  SIMPLE TIMER STYLE
+|--------------------------------------------------------------------------
+|
+*/        
+
+    #simpleTimer{
+        font-family : 'Pacifico', cursive;
+        margin      : 2em auto;
+        width       : 100%;
+
+    }
+
+    #simpleTimer .clock{
+        margin          : 1em auto;
+        text-align      : center;
+        letter-spacing  : 12px;
+    }
+
+    #simpleTimer .clock > div{
+        position    : relative;
+        text-align  : center;
+        display     : inline-block;
+        margin      : 0 2em;
+    }
+
+    #simpleTimer .clock > div > span{
+        display : block;
+    }
+
+    #simpleTimer .clock span.value{
+        font-size   : 5em;
+        text-shadow : 0 0 5px rgba(0,0,0,0.5);
+    }
+
+    #simpleTimer .clock span.title{
+        font-size   : 1.5em;
+        position    : absolute;
+        top         : 0;
+    }

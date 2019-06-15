@@ -1,6 +1,9 @@
 ////    SIMPLE TIMER
 function simpleTimer(expireDateTime)
 {
+
+    let years   = $("#simpleTimer_years");
+    let months  = $("#simpleTimer_months");
     let days    = $("#simpleTimer_days");
     let hours   = $("#simpleTimer_hours");
     let minutes = $("#simpleTimer_minutes");
@@ -12,14 +15,19 @@ function simpleTimer(expireDateTime)
         
         if(data.status === false)
         {
-            days.innerHTML      =   "00";
-            hours.innerHTML     =   "00";
-            minutes.innerHTML   =   "00";
-            seconds.innerHTML   =   "00";
+            years.innerHTML     = "00";
+            months.innerHTML    = "00";
+            days.innerHTML      = "00";
+            hours.innerHTML     = "00";
+            minutes.innerHTML   = "00";
+            seconds.innerHTML   = "00";
 
             clearInterval(simpleTimer);
             return;
         }
+
+        years.innerHTML     = data.years;
+        months.innerHTML    = data.months;
         days.innerHTML      = data.days;
         hours.innerHTML     = data.hours;
         minutes.innerHTML   = data.minutes;
@@ -47,18 +55,36 @@ function countDownBuilder(expireTime)
         return counterObject;
     }
 
+    let remainAfterStep     = 0;
     counterObject.status    = true;
-    counterObject.days      = "00";
-    counterObject.hours     = parseInt(timeRemaining / 3600);
-    counterObject.minutes   = parseInt((timeRemaining - (counterObject.hours * 3600)) / 60);
-    counterObject.seconds   = parseInt((timeRemaining - (counterObject.minutes * 60)) % 60) ;
+    counterObject.years     = parseInt(timeRemaining / (60 * 60 * 24 * 30 * 12));
+    //// month
+    remainAfterStep         = parseInt(timeRemaining - (counterObject.years * (12 * 30 * 24 * 60 * 60)) );
+    counterObject.months    = parseInt(remainAfterStep / ( 30 * 24 * 60 * 60 ));
+    //// days
+    remainAfterStep         = parseInt(remainAfterStep - (counterObject.months * (30 * 24 * 60 * 60)));
+    counterObject.days      = parseInt(remainAfterStep / ( 24 * 60 * 60));
+    //// hours
+    remainAfterStep         = parseInt(remainAfterStep - (counterObject.days * (24 * 60 * 60)))
+    counterObject.hours     = parseInt(remainAfterStep / (60 * 60));    
+    //// minutes
+    remainAfterStep         = parseInt(remainAfterStep - (counterObject.hours * (60 * 60)))
+    counterObject.minutes   = parseInt(remainAfterStep / (60));
+   //// seconds
+   remainAfterStep          = parseInt(remainAfterStep - (counterObject.minutes * (60)));
+    counterObject.seconds   = parseInt(remainAfterStep % 60) ;
 
+    
     ////    JUST ADD ZERO TO SINGLE DIGIT NUMBER
     /////////////////////////////////////////////////////////////////////////////////////////////////
+    counterObject.years     = counterObject.years   < 10  ? "0" + counterObject.years   : counterObject.years;
+    counterObject.months    = counterObject.months  < 10  ? "0" + counterObject.months  : counterObject.months;
+    counterObject.days      = counterObject.days    < 10  ? "0" + counterObject.days    : counterObject.days;
     counterObject.hours     = counterObject.hours   < 10  ? "0" + counterObject.hours   : counterObject.hours;
     counterObject.minutes   = counterObject.minutes < 10  ? "0" + counterObject.minutes : counterObject.minutes;
     counterObject.seconds   = counterObject.seconds < 10  ? "0" + counterObject.seconds : counterObject.seconds;
     /////////////////////////////////////////////////////////////////////////////////////////////////
+    
     return counterObject;
 
 }

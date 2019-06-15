@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="prism/prism.css">
+    <script src="prism/prism.js"></script>
 
     <title>Timer Created By Mekaeil</title>
     <link rel="stylesheet" href="style.css">
@@ -12,32 +16,53 @@
 <body>
 
     <!-- Simple Timer -->
-    <section id="simpleTimer">
+    <section id="simpleTimer" class="section">
+        <header>
+            <h1>simpleTimer</h1>
+        </header>
         <div class="clock container">
+            <div class="years">
+                <span class="title">Years</span>
+                <span id="simpleTimer_years" class="value">00</span>
+            </div>
+            <div class="months">
+                <span class="title">Months</span>
+                <span id="simpleTimer_months" class="value">00</span>
+            </div>            
             <div class="days">
                 <span class="title">Days</span>
                 <span id="simpleTimer_days" class="value">00</span>
             </div>
             <div class="hours">
                 <span id="test" class="title">Hours</span>
-                <span id="simpleTimer_hours" class="value">07</span>
+                <span id="simpleTimer_hours" class="value">00</span>
             </div>
             <div class="minutes">
                 <span class="title">Minutes</span>
-                <span id="simpleTimer_minutes" class="value">37</span>
+                <span id="simpleTimer_minutes" class="value">00</span>
             </div>
             <div class="seconds">
                 <span class="title">Seconds</span>
-                <span id="simpleTimer_seconds" class="value">47</span>
+                <span id="simpleTimer_seconds" class="value">00</span>
             </div>
         </div>
+
+        <footer>
+<pre>
+<code class="language-javascript">
+&lsaquo;script src="timer.js"&rsaquo;&lsaquo;\script&rsaquo;
+&lsaquo;script&rsaquo;
+    simpleTimer("2021-07-14T20:12:00"); // Expire-Time base this format : YYY-MM-DDTHH:MM:SS
+&lsaquo;\script&rsaquo;
+</code>
+</pre>
+        </footer>
+
     </section>
-
-
 
     <script src="timer.js"></script>
     <script>
-        simpleTimer("2019-07-14T20:12:00"); // YYY-MM-DDTHH:MM:SS
+        simpleTimer("2021-07-14T20:12:00"); // YYY-MM-DDTHH:MM:SS
     </script>
 </body>
 </html>
