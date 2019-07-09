@@ -197,3 +197,109 @@ function findElement(element)
     return find;
 
 }
+
+
+
+//// DIGITAL TIMER
+/////////////////////////////////////////////////////////////////////////
+
+function digitalTimer(expireDateTime)
+{
+
+    let digitTimer = setInterval(function()
+    {
+        let data = countDownBuilder(expireDateTime); 
+
+        if(data.status === false)
+        {
+            clearInterval(digitTimer);
+            return;
+        }
+
+        setPlotNumber(data.years, 'year');
+        setPlotNumber(data.months, 'month');
+        setPlotNumber(data.days, 'day');
+        setPlotNumber(data.hours, 'hour');
+        setPlotNumber(data.minutes, 'minute');
+        setPlotNumber(data.seconds, 'second');
+
+    }, 1000);
+
+}
+
+function setPlotNumber(number, type)
+{
+    number      = number.toString();
+    let element = document.querySelectorAll('.'+type);
+
+    let firstDigit  = element[0].getElementsByClassName('plot');
+    let secondDigit = element[1].getElementsByClassName('plot');
+
+    let firstArrToFill  = getArrayPlot(number.slice(0,1));
+    let secondArrToFill = getArrayPlot(number.slice(1,2));
+    //// HTML COLLECTION
+    [].forEach.call(firstDigit, function(item,index) 
+    {
+        if(firstArrToFill.indexOf(index+1) != -1)
+        {
+            item.setAttribute('style','background:'+ light);
+        }
+        else{
+            item.setAttribute('style','background:'+ dark);
+        }
+    });
+
+    [].forEach.call(secondDigit, function(item,index) 
+    {
+        if(secondArrToFill.indexOf(index+1) != -1)
+        {
+            item.setAttribute('style','background:'+ light);
+        }
+        else{
+            item.setAttribute('style','background:'+ dark);
+        }
+    });
+}
+// digitalTimer("2021-06-14T20:12:00");
+
+function getArrayPlot(number)
+{
+    let zero    = [1, 2, 3, 4, 6, 7, 9, 10, 12, 13, 14, 15];
+    let one     = [1, 2, 5, 8, 11, 14];
+    let two     = [1, 2, 3, 6, 7, 8, 9, 10, 13, 14, 15];
+    let three   = [1, 2, 3, 6, 7, 8, 9, 12, 13, 14, 15];
+    let four    = [1, 3, 4, 6, 7, 8, 9, 12, 15];
+    let five    = [1, 2, 3, 4, 7, 8, 9, 12, 13, 14, 15];
+    let six     = [1, 2, 3, 4, 7, 8, 9, 10, 12, 13, 14, 15];
+    let seven   = [1, 2, 3, 6, 9, 12, 15];
+    let eight   = [1, 2, 3, 4, 6, 7, 8, 9, 10, 12, 13, 14, 15];
+    let nine    = [1, 2, 3, 4, 6, 7, 8, 9, 12, 13, 14, 15];
+
+    switch(number)
+    {
+        case '0':
+            return zero;
+        case '1':
+            return one;
+        case '2':
+            return two;
+        case '3':
+            return three;
+        case '4':
+            return four;
+        case '5':
+            return five;
+        case '6':
+            return six;
+        case '7':
+            return seven;
+        case '8':
+            return eight;
+        case '9':
+            return nine;
+        default:
+            return zero;
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////
