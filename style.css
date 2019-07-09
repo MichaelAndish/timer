@@ -89,3 +89,39 @@
         position    : absolute;
         top         : 0;
     }
+
+
+/*
+|--------------------------------------------------------------------------
+|  DIGITAL TIMER STYLE
+|--------------------------------------------------------------------------
+|
+*/    
+
+    #digitalTimer{
+        margin-bottom : 5em;
+    }
+
+    .numberDigits .item{
+        width       : 4em;
+        text-align  : center;
+        display     : inline-block;
+    }
+
+    .numberDigits .item:nth-child(2n){
+        margin-right: 4em;
+    }
+
+    #digitalTimer .plot{
+        background  : #fc5050;
+        display     : inline-block;
+        width       : 30%;
+        height      : 1.65em;
+        margin      : -3px -1px;
+    }
+
+    #digitalTimer .plot:nth-child(5),
+    #digitalTimer .plot:nth-child(8),
+    #digitalTimer .plot:nth-child(11){
+        background  : #232323;
+    }
