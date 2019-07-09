@@ -232,44 +232,33 @@ function setPlotNumber(number, type)
     number      = number.toString();
     let element = document.querySelectorAll('.'+type);
 
-    // if(number.slice(0,1) != '0')
-    // {
-        let elements  = element[0].getElementsByClassName('plot');
-        let arrToFill = getArrayPlot(number.slice(0,1));
-        //// HTML COLLECTION
-        [].forEach.call(elements, function(item,index) 
-        {
-            if(arrToFill.indexOf(index+1) != -1)
-            {
-                item.setAttribute('style','background:#fc5050');
-            }
-            else{
-                item.setAttribute('style','background:#232323');
-            }
+    let firstDigit  = element[0].getElementsByClassName('plot');
+    let secondDigit = element[1].getElementsByClassName('plot');
 
-        });
-        
-    // }
-
-    if(number.slice(1,2) != '0')
+    let firstArrToFill  = getArrayPlot(number.slice(0,1));
+    let secondArrToFill = getArrayPlot(number.slice(1,2));
+    //// HTML COLLECTION
+    [].forEach.call(firstDigit, function(item,index) 
     {
-        let elements  = element[1].getElementsByClassName('plot');
-        let arrToFill = getArrayPlot(number.slice(1,2));
-        //// HTML COLLECTION
-        [].forEach.call(elements, function(item,index) 
+        if(firstArrToFill.indexOf(index+1) != -1)
         {
-            if(arrToFill.indexOf(index+1) != -1)
-            {
-                item.setAttribute('style','background:#fc5050');
-            }
-            else{
-                item.setAttribute('style','background:#232323');
-            }
-            
-        });
-        
-    }
+            item.setAttribute('style','background:'+ light);
+        }
+        else{
+            item.setAttribute('style','background:'+ dark);
+        }
+    });
 
+    [].forEach.call(secondDigit, function(item,index) 
+    {
+        if(secondArrToFill.indexOf(index+1) != -1)
+        {
+            item.setAttribute('style','background:'+ light);
+        }
+        else{
+            item.setAttribute('style','background:'+ dark);
+        }
+    });
 }
 // digitalTimer("2021-06-14T20:12:00");
 

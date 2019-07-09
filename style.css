@@ -106,10 +106,12 @@
         width       : 4em;
         text-align  : center;
         display     : inline-block;
+        background  : #242424;
+        margin      : 0 0.25em; 
     }
 
     .numberDigits .item:nth-child(2n){
-        margin-right: 4em;
+        margin-right: 3em;
     }
 
     #digitalTimer .plot{

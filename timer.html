@@ -15,7 +15,8 @@
 </head>
 <body>
 
-    <!-- Simple Timer -->
+    <!--==============================================================-->
+    <!-- SIMPLE TIMER -->
     <section id="simpleTimer" class="section">
         <header>
             <h1>simpleTimer</h1>
@@ -59,7 +60,12 @@
         </footer>
 
     </section>
+    <!-- END OF SIMPLE TIMER -->
+    <!--==============================================================-->
 
+
+    <!--==============================================================-->
+    <!-- DIGITAL TIMER -->
     <section id="digitalTimer" class="section">
         <header>
             <h1>digitalTimer</h1>
@@ -67,21 +73,21 @@
         <section class="numberDigits">
 
             <div class="item year">
-                <span class="plot">1</span>
-                <span class="plot">2</span>
-                <span class="plot">3</span>
-                <span class="plot">4</span>
-                <span class="plot">5</span>
-                <span class="plot">6</span>
-                <span class="plot">7</span>
-                <span class="plot">8</span>
-                <span class="plot">9</span>
-                <span class="plot">10</span>
-                <span class="plot">11</span>
-                <span class="plot">12</span>
-                <span class="plot">13</span>
-                <span class="plot">14</span>
-                <span class="plot">15</span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
             </div>
             <div class="item year">
                 <span class="plot"></span>
@@ -283,6 +289,8 @@
 <code class="language-javascript">
 &lsaquo;script src="timer.js"&rsaquo;&lsaquo;\script&rsaquo;
 &lsaquo;script&rsaquo;
+    let light = '#fc5050';
+    let dark  = '#232323';
     digitalTimer("2021-07-14T20:12:00"); // Expire-Time base this format : YYY-MM-DDTHH:MM:SS
 &lsaquo;\script&rsaquo;
 </code>
@@ -290,12 +298,17 @@
         </footer>
 
     </section>
+    <!-- END OF DIGITAL TIMER -->
+    <!--==============================================================-->
 
 
     <script src="timer.js"></script>
     <script>
         simpleTimer("2021-07-14T20:12:00"); // YYY-MM-DDTHH:MM:SS
 
+        ///////////////////////
+        let light = '#fc5050';
+        let dark  = '#232323';
         digitalTimer("2021-07-14T20:12:00"); // YYY-MM-DDTHH:MM:SS
     </script>
 </body>
