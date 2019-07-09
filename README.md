@@ -49,7 +49,13 @@ $('#anotherID #testAgain .hi'); // output is HTMLCollection
 
 </br>
 
+### DigitalTimer
+![image](https://github.com/Mekaeil/timer/blob/master/img/DigitalTimer.png)
+
+</br>
+
+
 # Package or Libraries
 
 * For code style we use [PrismJS](https://prismjs.com/) 
-* 
+* Font : [Pacifico](https://fonts.googleapis.com)
